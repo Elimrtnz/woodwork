@@ -1,0 +1,27 @@
+{
+    "name": "test",
+    "version": "1.0.0",
+    "description": "Wordpress Build",
+    "author": "Ready Artwork",
+    "license": "Ready Artwork",
+    "main": "index.php",
+    "scripts": {
+        "scss": "node-sass -r --output-style compressed -o wp-content/themes/woodwork/css wp-content/themes/woodwork/development/scss",
+        "uglifyjs-folder": "uglifyjs-folder wp-content/themes/woodwork/development/js/ -o wp-content/themes/woodwork/js/script.js",
+        "serve": "browser-sync start --proxy \"localhost/woodwork\" --files \"wp-content/themes/woodwork/css/*.css, wp-content/themes/woodwork/js/*.js\"",
+        "build:css": "npm run scss",
+        "build:js": "npm run uglifyjs-folder",
+        "build:all": "npm run build:css && npm run build:js",
+        "watch:css": "onchange \"wp-content/themes/woodwork/development/scss\" -- npm run build:css",
+        "watch:js": "onchange \"wp-content/themes/woodwork/development/js\" -- npm run build:js",
+        "watch:all": "npm-run-all -p serve watch:css watch:js",
+        "start": "npm run build:all && npm run watch:all"
+    },
+    "devDependencies": {
+        "node-sass": "^4.5.0",
+        "browser-sync": "^2.18.8",
+        "npm-run-all": "^4.0.2",
+        "onchange": "^3.2.1",
+        "uglifyjs-folder": "^1.1.0"
+    }
+}
