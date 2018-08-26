@@ -1,0 +1,52 @@
+# Numerous always-ignore extensions
+\#*#
+.\#*#
+\#.*
+.\#.*
+*#
+.#*
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+wp-config.php
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+.esproj
+nbproject
+wp-content/uploads
+node_modules/*
+#main.css
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+#css/*.css
+
+# assets folders
+assets/img/*
+
+
