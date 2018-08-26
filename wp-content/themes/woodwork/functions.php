@@ -159,3 +159,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// custom post types here
+
+
+add_action('init', 'slider_images');
+function slider_images () {
+  $args = array(
+    'label' => __('Slider Images' ),
+    'singular_label' => __('Slider Image' ),
+    'public' => false,
+    'show_ui' => true,
+    'capability_type' => 'page',
+    'hierarchical' => false,
+    'rewrite' => false,		
+    'supports' => array('title','thumbnail' , 'page-attributes')
+    );
+  register_post_type('slider_images',$args);
+}
