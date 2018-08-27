@@ -159,6 +159,86 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/*
+  Enques jQuery from Google CDN. 
+  Uses the currently registred WordPress jQuery version.
+*/
+  function appglobe_jquery_enqueue() { 
+
+  /* 
+     Probably not necessary if called with the 'wp_enqueue_scripts' action.
+  */
+     if (is_admin()) return; 
+
+     global $wp_scripts; 
+
+  /*
+    Change  this flag to have the CDN script  
+    triggered by wp_footer instead of wp_head.
+    If Google CDN is unavailable for some reason the flag 
+    will be ignored and the local WordPress 
+    jQuery gets enqueued and included in the head
+    by the wp_head function.
+  */
+    $cdn_script_in_footer = false; 
+  /*
+    Register jQuery from Google CDN.
+  */
+    if (is_a($wp_scripts, 'WP_Scripts') && isset($wp_scripts->registered['jquery'])) {
+    /* 
+       The WordPress jQuery version. 
+    */
+       $registered_jquery_version = $wp_scripts -> registered[jquery] -> ver; 
+
+       if($registered_jquery_version) {
+      /* 
+	 The jQuery Google CDN URL. 
+	 Makes a check for HTTP on top of SSL/TLS (HTTPS) 
+	 to make sure the URL is correct.
+      */
+  $google_jquery_url = ($_SERVER['SERVER_PORT'] == 443 ? "https" : "http") . 
+  "://ajax.googleapis.com/ajax/libs/jquery/$registered_jquery_version/jquery.min.js";
+
+      /* 
+	 Get the HTTP header response for the this URL, and check that its ok. 
+	 If ok, include jQuery from Google CDN. 
+      */
+ //  if(200 === wp_remote_retrieve_response_code(wp_remote_head($google_jquery_url))) {
+ //   wp_deregister_script('jquery');
+ //   wp_register_script('jquery', $google_jquery_url , false, null, $cdn_script_in_footer);
+ // }
+}
+}
+  /* 
+     Enqueue jQuery from Google if available. 
+     Fall back to the local WordPress default.
+     If the local WordPress jQuery is called, it will get 
+     included in the header no matter what the 
+     $cdn_script_in_footer flag above is set to.
+  */
+     wp_enqueue_script('jquery'); 
+   }
+   add_action('wp_enqueue_scripts', 'appglobe_jquery_enqueue', 11);
+
+/* 
+   add our scripts here instead, and use wp_footer to load most scripts
+*/
+
+
+function load_scripts() {
+  // register your script location, dependencies and version
+    wp_register_script('modernizer',get_template_directory_uri() . '/js/libs/modernizr-2.8.3.min.js',  '2.8.3',false );	 
+
+    // wp_register_script('plugins',get_template_directory_uri() . '/js/plugins.js',  array('jquery'),   '1.0' , true );	   
+    wp_register_script('scripts',get_template_directory_uri() . '/js/script.js',  array('jquery'),   '1.0', true );	   
+
+    wp_enqueue_script('modernizer');
+    // wp_enqueue_script('plugins');
+    wp_enqueue_script('scripts');
+
+  }
+  add_action('wp_enqueue_scripts', 'load_scripts');
+
 // custom post types here
 
 

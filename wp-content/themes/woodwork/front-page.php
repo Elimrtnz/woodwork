@@ -18,6 +18,28 @@ get_header();
 <div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<?php /* Slick Slider using Custom Post Type */ ?>
+			<?php query_posts( array('post_type' => 'slider_images', 'orderby' => 'menu_order', 'order' => 'ASC' ,  'post_status'=>'publish'  )); ?>
+			<div class="slickslider">
+				<ul class="slides">
+					<?php if(have_posts()): while (have_posts()) : the_post(); ?>
+						<?php if ( has_post_thumbnail() ): ?>
+							<?php
+							$custom = get_post_custom(get_the_ID());  
+							$link =  $custom["link1"][0]; ?> 
+							<?php if ( has_post_thumbnail()) : ?>      
+								<li class="slide" style="background: url( <?php $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $img[0]; ?>) no-repeat; min-height: 200px;" >
+									<a href="<?php echo $link;  ?>"> <div class="text"><?php echo get_the_content(); ?></div> </a>
+								</li>
+							<?php endif; ?>
+						<?php endif; ?>
+					<?php endwhile; endif;?>
+				</ul>
+			</div>
+			<?php wp_reset_query(); ?>
+
+
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
