@@ -2,3 +2,9 @@
 @import '_tools';
 @import '_grid';
 
+.main-navigation {
+	.menu {
+		@include clean;
+		background: $black;
+	}
+}
