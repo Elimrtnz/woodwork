@@ -28,8 +28,9 @@ get_header();
 							$custom = get_post_custom(get_the_ID());  
 							$link =  $custom["link1"][0]; ?> 
 							<?php if ( has_post_thumbnail()) : ?>      
-								<li class="slide" style="background: url( <?php $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $img[0]; ?>) no-repeat; min-height: 200px;" >
-									<a href="<?php echo $link;  ?>"> <div class="text"><?php echo get_the_content(); ?></div> </a>
+								<li class="slide" style="background: url( <?php $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); //echo $img[0]; ?>) " >
+									<img src="<?php echo $img[0]; ?>">
+									
 								</li>
 							<?php endif; ?>
 						<?php endif; ?>

@@ -102,3 +102,55 @@
 }
 
 
+/* Override slick slider here */
+.slickslider {
+    position: relative;
+    .slides {
+        @include clean;
+        .slide {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .slick-dots {
+        @include clean;
+        list-style-type: none;
+        text-align: center;
+        //@include displayFlex();
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 100%;
+        @media #{$large}{
+            bottom: 50px;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            button {
+                font-size: 0;
+                line-height: 0;
+                width: 10px;
+                height: 15px;
+                background: transparent;
+                border: 1px solid $black;
+                @include rounded-corners(50%);
+                @media #{$large} {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &.slick-active {
+                button {
+                    background: $white;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+

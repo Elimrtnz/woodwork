@@ -2,7 +2,10 @@
 jQuery(document).ready(function() { 
 
     if ( jQuery('.slickslider').length) {
-        jQuery('.slickslider ul.slides').slick();
+        jQuery('.slickslider ul.slides').slick({
+            arrows: false,
+            dots: true,
+        });
     }
 
 	// TO TOP
