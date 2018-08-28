@@ -2,9 +2,52 @@
 @import '_tools';
 @import '_grid';
 
+header {
+	background: $black;
+	.mobile_nav {
+		.menu-toggle {
+			display: block;
+			width: 40px;
+			height: 40px;
+			//border: 1px solid $white;
+			position: relative;
+			span {
+				display: block;
+				content: ' ';
+				width: 100%;
+				height: 2px;
+				background: $white;
+				position: absolute;
+				top: 18px;
+				left: 0;
+				&:after, &:before {
+					display: block;
+					content: ' ';
+					width: 100%;
+					height: 2px;
+					background: $white;
+					position: absolute;
+					left: 0;
+				}
+				&:after {
+					bottom: 9px;
+				}
+				&:before{
+					top: 9px;
+				}
+			}
+		}
+	}
+	.header_container {
+		.header_logo {
+			h1 {
+				margin: 0;
+			}
+		}
+	}
+}
 .main-navigation {
 	.menu {
 		@include clean;
-		background: $black;
 	}
 }
