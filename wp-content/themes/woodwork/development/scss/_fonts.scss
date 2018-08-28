@@ -10,10 +10,96 @@
 	}
 } */
 
+body, p {
+	font-family: 'Open Sans', sans-serif;
+	@include rfs(14);
+	line-height: 22px;
+	font-weight: 400;
+	color: $black;
+}
 a {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-	color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: $black;
+	@include rfs(55);
+	line-height: 65px;
+	@media #{$large}{
+		@include rfs(65);
+		line-height: 75px;
+	}
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: $black;
+	@include rfs(50);
+	line-height: 58px;
+	@media #{$large}{
+		@include rfs(60);
+		line-height: 68px;
+	}
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: $black;
+	@include rfs(20);
+	line-height: 28px;
+	@media #{$large}{
+		@include rfs(30);
+		line-height: 38px;
+	}
+}
+
+h4 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	color: $black;
+	@include rfs(16);
+	line-height: 22px;
+}
+
+h5 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: $black;
+	@include rfs(16);
+	line-height: 22px;
+}
+
+h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: $black;
+	@include rfs(14);
+	line-height: 20px;
+}
+
+
+/* NAV FONTS */
+nav {
+	ul {
+		li {
+			a{
+				@include rfs(16);
+				font-weight: 700;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: $white;
+			}
+			a:hover {
+				color: $gray;
+			}		
+		}
+	}
 }
