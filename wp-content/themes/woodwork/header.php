@@ -32,13 +32,13 @@
 
 	<header id="masthead" class="site-header">
 
-		<div class="container">
+		<div class="container mobile-nav">
 			<div class="row">
 				<div class="mobile_nav col-4" data-menu="off">
 					<a class="menu-toggle" href="javascript:void(0);"><span></span></a>
 				</div>
 
-				<div class="header_container col-6">
+				<div class="header_container col-8">
 					<div class="header_logo">
 						<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 						<<?php echo $heading_tag; ?> id="site-title">
@@ -51,15 +51,24 @@
 			</div>
 		</div>
 
-      	<nav id="site-navigation" class="main-navigation">
-			
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+		<nav id="site-navigation" class="main-navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+
+
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						) );
+						?>
+
+					</div>
+				</div>
+			</div>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

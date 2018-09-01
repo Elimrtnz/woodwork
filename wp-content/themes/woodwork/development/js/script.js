@@ -31,6 +31,14 @@ jQuery(document).ready(function() {
         	return false;
         });
     });
+
+    jQuery('.menu-toggle').click(function(){
+        jQuery(this).toggleClass('active');
+        jQuery('.main-navigation').toggleClass('active');
+    });
+
+
+
 });
 
 

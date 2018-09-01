@@ -39,6 +39,12 @@ get_header();
 			</div>
 			<?php wp_reset_query(); ?>
 
+			<div class="icon">
+				<i class="fas fa-pencil"></i>
+
+
+			</div>
+
 
 
 		</main><!-- #main -->

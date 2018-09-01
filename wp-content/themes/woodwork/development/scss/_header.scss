@@ -3,7 +3,16 @@
 @import '_grid';
 
 header {
-	background: $black;
+	background: rgba($black, 0.5);
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	.mobile-nav {
+		@media #{$lg} {
+			display: none;
+		}
+	}
 	.mobile_nav {
 		.menu-toggle {
 			display: block;
@@ -31,9 +40,24 @@ header {
 				}
 				&:after {
 					bottom: 9px;
+					@include transition (all 0.3s ease );
 				}
 				&:before{
 					top: 9px;
+					@include transition (all 0.3s ease );
+				}
+			}
+			&.active {
+				span {
+					background: transparent;
+					&:after {
+						top: 0;
+						@include transform(rotate(-45deg));
+					}
+					&:before{
+						top: 0;
+						@include transform(rotate(45deg));
+					}
 				}
 			}
 		}
@@ -47,7 +71,35 @@ header {
 	}
 }
 .main-navigation {
+	opacity: 0;
+	height: 0px;
+	@include transition (all 0.3s ease );
+	@media #{$lg} {
+		opacity: 1;
+		height: 50px;
+		@include displayFlex();
+		@include alignItems(center);
+	}
+	&.active {
+		height: unset;
+		opacity: 1;
+		@media #{$lg} {
+			height: 50px;
+		}
+	}
 	.menu {
 		@include clean;
+		@media #{$lg} {
+			text-align: right;
+		}
+		>li {
+			@media #{$lg} {
+				display: inline-block;
+				margin-right: 5px;
+			}
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
 	}
 }

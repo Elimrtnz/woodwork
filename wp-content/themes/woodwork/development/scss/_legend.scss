@@ -8,3 +8,21 @@ $large: "only screen and (min-width: 1025px)";
 $black: #000000;
 $white: #ffffff;
 $gray: #999999;
+
+
+//bootstrap grid
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+$sm: "only screen and (min-width: 576px)";
+
+// Medium devices (tablets, 768px and up)
+$md: "only screen and (min-width: 768px)";
+
+// Large devices (desktops, 992px and up)
+$lg: "only screen and (min-width: 992px)";
+
+// Extra large devices (large desktops, 1200px and up)
+$xl: "only screen and (min-width: 1200px)";
