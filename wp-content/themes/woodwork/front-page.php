@@ -39,10 +39,42 @@ get_header();
 			</div>
 			<?php wp_reset_query(); ?>
 
-			<div class="icon">
-				<i class="fas fa-pencil"></i>
 
+			<div class="container services">
+				<div class="section-title">
+					<h2>
+						<?php the_field('services_title'); ?>
+					</h2>
+				</div>
+				<div class="row">
+					<div class="col-12 col-lg-4 service">
+						<h3 class="title">
+							<?php the_field('services_1_title'); ?>
+						</h3>
+						<div class="content">
+							<?php the_field('service_1'); ?>
+						</div>
+					</div>
 
+					<div class="col-12 col-lg-4 service">
+						<h3 class="title">
+							<?php the_field('services_2_title'); ?>
+						</h3>
+						<div class="content">
+							<?php the_field('service_2'); ?>
+						</div>
+					</div>
+
+					<div class="col-12 col-lg-4 service">
+						<h3 class="title">
+							<?php the_field('services_3_title'); ?>
+						</h3>
+						<div class="content">
+							<?php the_field('service_3'); ?>
+						</div>
+					</div>
+
+				</div>
 			</div>
 
 
