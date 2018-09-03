@@ -6,7 +6,7 @@
 
 .showcase {
 	.showcase-img {
-		min-height: 30rem; 
+		min-height: 40rem; 
 		background-position: center; 
 		background-size: cover;
 	}
@@ -19,6 +19,23 @@
 			padding: 3rem;
 			@media #{$md} {
 				padding: 7rem;
+			}
+		}
+	}
+}
+
+.quote {
+	background: $gray;
+	.quote-button {
+		@media #{$md} {
+			@include displayFlex();
+			@include alignItems(center);
+			@include justifyContent(center);
+		}
+		p {
+			margin: 0;
+			a {
+				@include buttonStyle($bg: $black, $color: $white, $bghover: $white, $colorhover: $black)
 			}
 		}
 	}

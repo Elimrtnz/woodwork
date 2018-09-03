@@ -79,6 +79,22 @@ get_header();
 				</div>
 			</section>
 
+			<section class="quote">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<h4><?php the_field('cta_heading'); ?></h4>
+							<div class="content">
+								<?php the_field('cta_content'); ?>
+							</div>
+						</div>
+						<div class="col-lg-4 quote-button">
+							<?php the_field('cta_button'); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="showcase">
 
 				<?php for($x=1; $x<=3 ; $x++) { ?>
