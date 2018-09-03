@@ -73,6 +73,7 @@ header {
 .main-navigation {
 	opacity: 0;
 	height: 0px;
+	overflow: hidden;
 	@include transition (all 0.3s ease );
 	@media #{$lg} {
 		opacity: 1;

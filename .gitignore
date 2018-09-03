@@ -27,7 +27,7 @@ Thumbs.db
 nbproject
 wp-content/uploads
 node_modules/*
-#main.css
+main.css
 
 # Dreamweaver added files
 _notes

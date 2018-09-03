@@ -153,3 +153,29 @@
  -ms-flex-wrap: $wrap;
  flex-wrap: $wrap;
 }
+
+
+@mixin buttonStyle($bg: $gray, $color: $black, $bghover: $black, $colorhover: $gray) {
+  background-image: none;
+  background: $bg;
+  //order: 2px solid $blue;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  @include rfs(16);
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  //@include rounded-corners(5px);
+  padding: 5px 30px;
+  &:hover, &.focus, &.active {
+    background: $bghover;
+    color: $colorhover;
+  }
+  span {
+    font-weight: inherit;
+  }
+}
+
