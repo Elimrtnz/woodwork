@@ -1,3 +1,25 @@
 @import '_legend';
 @import '_tools';
 @import '_grid';
+
+//home
+
+.showcase {
+	.showcase-img {
+		min-height: 30rem; 
+		background-position: center; 
+		background-size: cover;
+	}
+	.block-flex {
+		@media #{$md} {
+			@include displayFlex();
+			@include alignItems(center);
+		}
+		.showcase-text {
+			padding: 3rem;
+			@media #{$md} {
+				padding: 7rem;
+			}
+		}
+	}
+}

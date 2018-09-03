@@ -40,42 +40,79 @@ get_header();
 			<?php wp_reset_query(); ?>
 
 
-			<div class="container services">
-				<div class="section-title">
-					<h2>
-						<?php the_field('services_title'); ?>
-					</h2>
+			<section class="services">
+				<div class="container">
+					<div class="section-title">
+						<h2>
+							<?php the_field('services_title'); ?>
+						</h2>
+					</div>
+					<div class="row">
+						<div class="col-12 col-lg-4 service">
+							<h3 class="title">
+								<?php the_field('services_1_title'); ?>
+							</h3>
+							<div class="content">
+								<?php the_field('service_1'); ?>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-4 service">
+							<h3 class="title">
+								<?php the_field('services_2_title'); ?>
+							</h3>
+							<div class="content">
+								<?php the_field('service_2'); ?>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-4 service">
+							<h3 class="title">
+								<?php the_field('services_3_title'); ?>
+							</h3>
+							<div class="content">
+								<?php the_field('service_3'); ?>
+							</div>
+						</div>
+
+					</div>
 				</div>
-				<div class="row">
-					<div class="col-12 col-lg-4 service">
-						<h3 class="title">
-							<?php the_field('services_1_title'); ?>
-						</h3>
-						<div class="content">
-							<?php the_field('service_1'); ?>
-						</div>
-					</div>
+			</section>
 
-					<div class="col-12 col-lg-4 service">
-						<h3 class="title">
-							<?php the_field('services_2_title'); ?>
-						</h3>
-						<div class="content">
-							<?php the_field('service_2'); ?>
-						</div>
-					</div>
+			<section class="showcase">
 
-					<div class="col-12 col-lg-4 service">
-						<h3 class="title">
-							<?php the_field('services_3_title'); ?>
-						</h3>
-						<div class="content">
-							<?php the_field('service_3'); ?>
-						</div>
-					</div>
+				<?php for($x=1; $x<=3 ; $x++) { ?>
+				<div class="container-fluid p-0">
+					<div class="row no-gutters">
 
+						<?php $blockContent = get_field('block_'.$x.''); ?>
+						<?php $blockTitle = get_field('block_title_'.$x.''); ?>
+						<?php $blockImg = get_field('block_image_'.$x.''); ?>
+						<?php $var = ($x % 2); ?>
+						<?php $y = ( $var == 0 ? 2 : 0);  ?>
+
+
+						<div class="col-lg-6 order-lg-<?php echo $y; ?> showcase-img" style="background-image:url('<?php echo $blockImg['url']; ?>');">
+						</div>
+						<div class="col-lg-6 order-lg-1 block-flex">
+							<div class="showcase-text">
+								<div class="titile">
+									<?php echo $blockTitle; ?>
+								</div>
+								<div class="content">
+									<?php echo $blockContent; ?>
+								</div>
+							</div>
+						</div>
+
+					
+
+
+					</div>
 				</div>
-			</div>
+
+				<?php }; ?>
+			</section>
 
 
 

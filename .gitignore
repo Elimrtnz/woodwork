@@ -44,8 +44,7 @@ dwsync.xml
 intermediate
 publish
 .idea
-#css
-/*.css
+css/*.css
 
 # assets folders
 assets/img/*
