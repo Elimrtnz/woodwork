@@ -65,3 +65,19 @@ table {
 		display: none !important;
 	}
 }
+
+.banner {
+	min-height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	@include displayFlex();
+	@include alignItems(center);
+	@include justifyContent(center);
+	@media #{$medium}{
+		min-height: 300px;
+	}
+	@media #{$large}{
+		min-height: 400px;
+	}
+}
