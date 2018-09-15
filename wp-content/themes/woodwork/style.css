@@ -618,7 +618,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	/*color: purple;*/
 }
 
 a:hover, a:focus, a:active {

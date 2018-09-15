@@ -33,12 +33,12 @@
 	<header id="masthead" class="site-header">
 
 		<div class="container mobile-nav">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="mobile_nav col-4" data-menu="off">
 					<a class="menu-toggle" href="javascript:void(0);"><span></span></a>
 				</div>
 
-				<div class="header_container col-8">
+				<div class="header_container col-4">
 					<div class="header_logo">
 						<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 						<<?php echo $heading_tag; ?> id="site-title">
